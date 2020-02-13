@@ -7,7 +7,10 @@ import {auth } from '../../firebase/firebase.util';
 
 import './header.styles.scss';
 
-const Header = ({currentUser}) => (
+const Header = ({currentUser}) =>{ 
+    console.log(currentUser);
+    
+    return(
     <div className='header'>
         <Link className='logo-container' to='/'>
             <Logo className='logo' />
@@ -19,7 +22,7 @@ const Header = ({currentUser}) => (
             <Link className='option' to='/contact'>
                 CONTACT
             </Link>
-            {
+            {   
                 currentUser ?
                 <div className='option' onClick={()=>auth.signOut()}>SIGN OUT</div>
                 :
@@ -29,6 +32,6 @@ const Header = ({currentUser}) => (
         </div>
     </div>
 
-)
+)}
 
 export default Header;
