@@ -11,3 +11,11 @@ a{
 *{
     box-sizing: border-box;
 }
+
+.comp-fade-in {
+    opacity: 0;
+}
+.comp-fade-in.visible {
+    transition: opacity 1s ease-in;
+    opacity: 1;
+}
